@@ -1,3 +1,5 @@
+const cocktail = document.querySelector(".cocktails")
+const button = document.querySelector(".cocktailbtn")
 // fetching data from thecocktaildb api
 
 fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
@@ -8,8 +10,6 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
         return response.json();
     })
     .then(function(data) {
-        const cocktail = document.querySelector(".cocktails")
-        const button = document.querySelector(".cocktailbtn")
         const randomdrink = function() {
             let drink = Math.floor(Math.random() * 100)
             cocktail.innerHTML = `
