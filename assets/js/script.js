@@ -1,6 +1,6 @@
 // fetching data from thecocktaildb api
 
-fetch('https://www.thecocktaildb.com/api/json/v1/random.php')
+fetch('https://www.thecocktaildb.com/api/json/v1/')
     .then(function(response) {
 
         // JSON that is returned from the server will be converted to JS object asynchronously.
