@@ -13,7 +13,7 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
         const randomdrink = function() {
             let drink = Math.floor(Math.random() * 100)
             cocktail.innerHTML = `
-    <img src=${[drink].0.strDrinkThumb} alt="${[drink].0.strDrink}" weight="300" height="450">
+    <img src="${[drink].strDrinkThumb}" alt="${[drink].strDrink}" weight="300" height="450">
     <h3>Cocktail: ${[drink].0.StrDrink}</h3>
     <h4>Instructions: ${[drink].0.strInstruction}</h4>
     `
