@@ -1,21 +1,16 @@
 // fetching data from thecocktaildb api
 
-fetch('https://www.thecocktaildb.com/api/json/v1/')
+fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     .then(function(response) {
-
-        // JSON that is returned from the server will be converted to JS object asynchronously.
         if (!response.ok) {
             throw new Error('Not 200 OK');
         }
         return response.json();
     })
     .then(function(data) {
-        // applying my selectors to the items in html
         const cocktail = document.querySelector(".cocktails")
         const button = document.querySelector(".cocktailbtn")
-            //function for random drink
         const randomdrink = function() {
-            //creating a random number
             let drink = Math.floor(Math.random() * 100)
             cocktail.innerHTML = `
     <img src="${data[drink].strDrinkThumb}" alt="${data[drink].strDrink}" weight="300" height="450">
@@ -28,7 +23,6 @@ fetch('https://www.thecocktaildb.com/api/json/v1/')
         button.addEventListener('click', randomdrink)
     })
     .catch(function(err) {
-        // An error or `reject` from any of the above `.then()` blocks will end up here.
         cocktail.innerHTML = `
     <h1>ERROR! ERROR!</h1>
     <img src="https://images.pexels.com/photos/6858621/pexels-photo-6858621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="300">
