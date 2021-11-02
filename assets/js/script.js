@@ -18,9 +18,9 @@ fetch('https://www.thecocktaildb.com/api/json/v1/random.php')
             //creating a random number
             let drink = Math.floor(Math.random() * 100)
             cocktail.innerHTML = `
-    <img src="${data[randomdrink].strDrinkThumb}" alt="${data[randomdrink].strDrink}" weight="300" height="450">
-    <h3>Cocktail: ${data[randomdrink].StrDrink}</h3>
-    <h4>Instructions: ${data[randomdrink].strInstruction}</h4>
+    <img src="${data[drink].strDrinkThumb}" alt="${data[drink].strDrink}" weight="300" height="450">
+    <h3>Cocktail: ${data[drink].StrDrink}</h3>
+    <h4>Instructions: ${data[drink].strInstruction}</h4>
     `
         }
         randomdrink()
@@ -29,7 +29,7 @@ fetch('https://www.thecocktaildb.com/api/json/v1/random.php')
     })
     .catch(function(err) {
         // An error or `reject` from any of the above `.then()` blocks will end up here.
-        cocktails.innerHTML = `
+        cocktail.innerHTML = `
     <h1>ERROR! ERROR!</h1>
     <img src="https://images.pexels.com/photos/6858621/pexels-photo-6858621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="300">
     <h2>There seems to be a problem, try clicking on the button again.</h2>
