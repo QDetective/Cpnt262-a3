@@ -11,16 +11,16 @@ fetch('https://www.thecocktaildb.com/api/json/v1/random.php')
     })
     .then(function(data) {
         // applying my selectors to the items in html
-        const cocktails = document.querySelector(".cocktails")
+        const cocktail = document.querySelector(".cocktails")
         const button = document.querySelector(".cocktailbtn")
             //function for random drink
         const randomdrink = function() {
             //creating a random number
             let drink = Math.floor(Math.random() * 100)
-            cocktails.innerHTML = `
-    <img src="${data[drink].strDrinkThumb}" alt="${data[drink].strDrink}" weight="300" height="450">
-    <h3>Cocktail: ${data[film].StrDrink}</h3>
-    <h4>Instructions: ${data[film].strInstruction}</h4>
+            cocktail.innerHTML = `
+    <img src="${data[randomdrink].strDrinkThumb}" alt="${data[randomdrink].strDrink}" weight="300" height="450">
+    <h3>Cocktail: ${data[randomdrink].StrDrink}</h3>
+    <h4>Instructions: ${data[randomdrink].strInstruction}</h4>
     `
         }
         randomdrink()
